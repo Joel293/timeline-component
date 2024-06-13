@@ -1,6 +1,7 @@
 # React Timeline component
 
 ## To run in development
-To run the app run the following command
 
-`npm run dev`
+1. Install dependencies `npm install`
+2. Run the following command `npm run dev`
+
