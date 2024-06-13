@@ -1,0 +1,81 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.input-container {
+    // border: .1rem solid v.$white;
+    width: 100%;
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__add-cont {
+        display: grid;
+        padding: .5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & div:nth-child(4) {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__field {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__title {
+        text-align: right;
+        color: v.$white;
+    }
+
+    &__input {
+        // width: 25rem;
+        outline: none;
+        height: 2.8rem;
+        font-size: 1.6rem;
+        border: .2rem solid v.$tertiary;
+        background-color: v.$light_gray;
+        border-radius: 2px;
+    }
+
+    &__textarea {
+        width: 25rem;
+        outline: none;
+        font-size: 1.6rem;
+        border: .2rem solid v.$tertiary;
+        background-color: v.$light_gray;
+        border-radius: 2px;
+    }
+
+    &__color {
+        appearance: none;
+        width: 4rem;
+        height: 4rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
+
+    &__button {
+        outline: none;
+        border: none;
+        background-color: v.$dark_blue;
+        color: v.$white;
+        width: 50%;
+        height: 3rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten(v.$dark_blue, 5%);
+        }
+       
+    }
+}

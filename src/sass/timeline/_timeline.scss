@@ -1,0 +1,133 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.main-container {
+    padding-top: 3rem;
+    height: 100vh;
+}
+
+.timeline {
+    position: relative;
+    max-width: 75rem;
+    margin: 0 auto 3rem;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @include m.phone { 
+        margin: 0 auto 4rem;    
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: .3rem;
+        height: 100%;
+        background: v.$tertiary;
+        top: 0;
+        margin-left: -.3rem;
+        z-index: -1;
+        left: 3rem;
+
+        @include m.phone { 
+            left: 50%;
+        }
+    }
+
+    &__circle-wrap {
+        position: absolute;
+    }
+
+    &__circle {
+        height: 2rem;
+        width: 2rem;
+        background-color: v.$secondary;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    &__min-circle {
+        height: 1.35rem;
+        width: 1.35rem;
+        background-color: v.$secondary_black;
+        border-radius: 50%;
+        position: absolute;
+        top: .37rem;
+        left: .34rem;
+    }
+    
+    &__container {
+        width: 100%;
+        padding: 1rem 0;
+        padding-left:  5rem;
+        padding-right: 2rem;
+        position: relative;
+       
+        @include m.phone { 
+            width: 50%;
+            padding: 1rem 3rem;
+        }
+    }
+
+    &__text-box {
+        border: .1rem solid v.$tertiary;
+        text-align: center;
+        line-height: 1.5;
+        padding: 1rem .5rem;
+        border-radius: .3rem;
+    }
+
+    &__left-container {
+        left: 0;
+    }
+
+    &__right-container {
+        left: 0;
+
+        @include m.phone { 
+            left: 50%;    
+        }
+        
+    }
+
+    &__title {
+        color: v.$gray;
+        margin: 0;
+        font-size: 1.6rem;
+
+        @include m.phone { 
+            font-size: 1.8rem;    
+        }
+        
+    }
+
+    &__text {
+        color: v.$light_gray;
+        margin: 0;
+        font-size: 1.4rem;
+
+        @include m.phone { 
+            font-size: 1.5rem;    
+        }
+    }
+
+    //left-container also
+    &__container &__circle-wrap {
+        top: 40%;
+        left: 1.8rem;
+
+        @include m.phone { 
+            left: unset; //quitar el left
+            right: -.9rem;    
+        }
+    }
+
+    &__right-container &__circle-wrap {
+        left: 1.8rem;
+
+        @include m.phone { 
+            left: -1.1rem;    
+        }
+    }
+}
